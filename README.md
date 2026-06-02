@@ -50,6 +50,25 @@ uvicorn app:app --reload
 
 Then open `http://127.0.0.1:8000/` to access the PL/SQL modernization dashboard, including analysis and code generation panels.
 
+## Streamlit Demo App
+
+A Streamlit version of the modernization workflow is available in `streamlit_app.py`. Install dependencies and run:
+
+```bash
+pip install -r requirements.txt
+streamlit run streamlit_app.py
+```
+
+Then open the local Streamlit URL shown in the console to use the interactive UI.
+
+## Streamlit Cloud Deployment
+
+1. Push the repository to GitHub.
+2. Sign in at `https://streamlit.io/cloud`.
+3. Create a new app and connect your GitHub repo.
+4. Set the main file to `streamlit_app.py`.
+5. Deploy the app and use the generated public URL.
+
 ## Migration Dashboard
 
 | Metric | Current Value | Notes |
