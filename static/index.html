@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legacy Code Modernization Dashboard</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AI-Powered Modernization</p>
+        <h1>Legacy Code Modernization Assistant</h1>
+        <p class="subtitle">Analyze PL/SQL, generate Python and FastAPI conversions, and surface migration risks with a clean enterprise dashboard.</p>
+      </div>
+      <div class="header-actions">
+        <span class="badge">Portfolio Demo</span>
+      </div>
+    </header>
+
+    <section class="metric-grid" aria-label="Migration metrics">
+      <article class="metric-card">
+        <p class="metric-label">Procedures Analyzed</p>
+        <h2 id="procedures-analyzed">0</h2>
+        <p class="metric-note">AI review count for current session.</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Migration Complexity</p>
+        <h2 id="migration-complexity">Moderate</h2>
+        <p class="metric-note">Estimated model risk and effort level.</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Estimated Effort Saved</p>
+        <h2 id="effort-saved">0%</h2>
+        <p class="metric-note">Projected time savings from automation.</p>
+      </article>
+      <article class="metric-card">
+        <p class="metric-label">Code Quality Score</p>
+        <h2 id="code-quality">0 / 100</h2>
+        <p class="metric-note">Quality, maintainability, and readability.</p>
+      </article>
+    </section>
+
+    <div class="dashboard-grid">
+      <section class="workspace-card">
+        <div class="card-header">
+          <div>
+            <p class="eyebrow">PL/SQL Input</p>
+            <h2>Paste legacy procedure code</h2>
+          </div>
+        </div>
+
+        <textarea id="sql-input" placeholder="Paste your PL/SQL procedure here...">CREATE OR REPLACE PROCEDURE calculate_commission(
+    p_salesperson_id IN NUMBER,
+    p_month IN VARCHAR2,
+    p_result OUT NUMBER)
+AS
+    v_total_sales NUMBER;
+    v_commission_rate NUMBER;
+BEGIN
+    SELECT SUM(amount)
+      INTO v_total_sales
+      FROM sales_transactions
+     WHERE salesperson_id = p_salesperson_id
+       AND transaction_month = p_month;
+
+    SELECT commission_rate
+      INTO v_commission_rate
+      FROM commission_rates
+     WHERE month_code = p_month;
+
+    IF v_total_sales IS NULL THEN
+        v_total_sales := 0;
+    END IF;
+
+    p_result := v_total_sales * v_commission_rate;
+END calculate_commission;</textarea>
+
+        <div class="action-row">
+          <button class="primary-btn" onclick="analyzeCode()">Analyze</button>
+          <button onclick="generatePython()">Generate Python</button>
+          <button onclick="generateFastAPI()">Generate FastAPI</button>
+          <button onclick="generateTestCases()">Generate Test Cases</button>
+        </div>
+      </section>
+
+      <section class="output-panel">
+        <article class="output-card">
+          <div class="output-header">
+            <h3>Business Logic Analysis</h3>
+          </div>
+          <div id="analysis-output" class="output-content">
+            <p>Use the analyze button to surface business rules, dependencies, and modernization insights.</p>
+          </div>
+        </article>
+
+        <article class="output-card">
+          <div class="output-header">
+            <h3>Python Conversion</h3>
+          </div>
+          <pre id="python-output" class="code-output"># Generated Python conversion will appear here.</pre>
+        </article>
+
+        <article class="output-card">
+          <div class="output-header">
+            <h3>FastAPI Conversion</h3>
+          </div>
+          <pre id="fastapi-output" class="code-output"># Generated FastAPI conversion will appear here.</pre>
+        </article>
+
+        <article class="output-card">
+          <div class="output-header">
+            <h3>Migration Risks</h3>
+          </div>
+          <div id="risks-output" class="output-content">
+            <p>Risk analysis helps identify testing gaps, data integrity issues, and architectural dependencies.</p>
+          </div>
+        </article>
+
+        <article class="output-card">
+          <div class="output-header">
+            <h3>Test Cases</h3>
+          </div>
+          <pre id="tests-output" class="code-output"># Generated unit and integration test cases will appear here.</pre>
+        </article>
+      </section>
+    </div>
+  </div>
+  <script src="/static/app.js"></script>
+</body>
+</html>

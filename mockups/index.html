@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legacy Code Modernization Mockup</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mockup-shell">
+    <header class="mockup-header">
+      <div>
+        <p class="mockup-eyebrow">Sample Workflow</p>
+        <h1>PL/SQL to Python FastAPI Migration</h1>
+        <p>Demonstration of how a user moves from legacy code analysis to modern API output.</p>
+      </div>
+      <div class="mockup-chip">Mockup</div>
+    </header>
+
+    <section class="step-grid">
+      <article class="step-card">
+        <div class="step-badge">1</div>
+        <h2>Paste PL/SQL Code</h2>
+        <p>Start by inserting the legacy stored procedure into the input editor.</p>
+        <pre><code>CREATE OR REPLACE PROCEDURE calculate_commission(...</code></pre>
+      </article>
+
+      <article class="step-card">
+        <div class="step-badge">2</div>
+        <h2>Analyze Business Logic</h2>
+        <p>Use the Analyze button to generate a structured review of business rules, dependencies, and modernization guidance.</p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-badge">3</div>
+        <h2>Generate Python & FastAPI</h2>
+        <p>Convert the legacy logic into clean Python functions and a FastAPI endpoint with a single click.</p>
+      </article>
+
+      <article class="step-card">
+        <div class="step-badge">4</div>
+        <h2>Review Risks & Tests</h2>
+        <p>Review migration risks and automatically generated test cases to ensure behavior is preserved.</p>
+      </article>
+    </section>
+
+    <section class="visual-grid">
+      <article class="screen-card">
+        <div class="screen-header">
+          <h3>PL/SQL Input Screen</h3>
+          <span>Placeholder input + action buttons</span>
+        </div>
+        <div class="screen-body">
+          <div class="input-block">
+            <label>PL/SQL Editor</label>
+            <textarea readonly>CREATE OR REPLACE PROCEDURE calculate_commission(...)</textarea>
+          </div>
+          <div class="button-row">
+            <button>Analyze</button>
+            <button>Generate Python</button>
+            <button>Generate FastAPI</button>
+            <button>Generate Test Cases</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="screen-card large">
+        <div class="screen-header">
+          <h3>Output Dashboard</h3>
+          <span>Analysis, conversion results, migration risks, and test cases.</span>
+        </div>
+        <div class="result-grid">
+          <div class="result-panel">
+            <h4>Business Logic Analysis</h4>
+            <p>Extracted core rules, data flows, and exception handling for migration planning.</p>
+          </div>
+          <div class="result-panel">
+            <h4>Python Conversion</h4>
+            <pre><code>def calculate_commission(...)</code></pre>
+          </div>
+          <div class="result-panel">
+            <h4>FastAPI Conversion</h4>
+            <pre><code>@app.post('/commission')</code></pre>
+          </div>
+          <div class="result-panel">
+            <h4>Migration Risks</h4>
+            <ul>
+              <li>Type mapping gaps</li>
+              <li>Null handling differences</li>
+              <li>Exception semantics</li>
+            </ul>
+          </div>
+          <div class="result-panel">
+            <h4>Test Cases</h4>
+            <pre><code>def test_calculate_commission():</code></pre>
+          </div>
+        </div>
+      </article>
+    </section>
+  </div>
+</body>
+</html>
